@@ -33,47 +33,50 @@ Jika sudah melakukan pemesanan maka jika ingin keluar atau end pembeli bisa memi
 
 ==========Baris Code===========
 Baris 36-37 berfungsi untuk memanggil prettytable serta membuat tabel yang mudah dibaca, kemudian untuk datetime berfungsi untuk memanggil tanggal dan waktu.
-from prettytable import PrettyTable
-from datetime import datetime
+
+    from prettytable import PrettyTable
+    from datetime import datetime
 
 Baris 40-44 yaitu berfungsi untuk menyimpan data data yang telah diinputkan contohnya menambahkan menu yang baru ditambah maka data itu ada tersimpan disini begitu juga dengan bayar seta pembeli, dan untuk meja disini terdapat 5 meja karena "in range(1,6) jadi untuk menyimpan status dari ke 5 meja tersebut apakah kosong atau sudah dipesan.
-# menyimpan data
-menu = []
-bayar = []
-meja = [{'id': i, 'status': 'kosong'} for i in range(1, 6)]
-pembeli = []
+
+    menu = []
+    bayar = []
+    meja = [{'id': i, 'status': 'kosong'} for i in range(1, 6)]
+    pembeli = []
 
 Baris 48-49 merupakan cara login admin untuk mengakses role admin dengan menggunakan id dan password yang telah disiapkan.
-# login untuk admin
-id_admin = "admin"
-pw_admin = "admin123"
+
+    id_admin = "admin"
+    pw_admin = "admin123"
 
 Baris 53-56 merupakan fungsi role admin untuk menambahkan menu, seperti "id_menu = len(menu) + 1" itu ibaratkan nomor contoh menambahkan menu ayam maka akan dianggap sebagai no 1 atau id 1 begitu juga seterusnya, untuk "menu.append" untuk menambahkan menu baru kedalam yang berisi id, menu, dan harga.
-# fungsi role admin
-def tambah_menu(nama, harga):
-    id_menu = len(menu) + 1
-    menu.append({"id": id_menu, "menu": nama, "harga": harga})
-    print(f"===menu '{nama}' telah ditambahkan.===")
+
+    def tambah_menu(nama, harga):
+        id_menu = len(menu) + 1
+        menu.append({"id": id_menu, "menu": nama, "harga": harga})
+        print(f"===menu '{nama}' telah ditambahkan.===")
 
 Baris 59-66 merupakan fungsi role admin untuk melihat menu, disini menampilkan menu menggunakan prettytable dan jika menu belum ada maka akan muncul "else"
-def lihat_menu():
-    if menu:
-        tabel = PrettyTable(['Nomor', 'Menu', 'Harga'])
-        for item in menu:
-            tabel.add_row([item['id'], item['menu'], item['harga']])
-        print(tabel)
-    else:
-        print("menu tidak ada silahkan ditambah dulu.")
+
+    def lihat_menu():
+        if menu:
+            tabel = PrettyTable(['Nomor', 'Menu', 'Harga'])
+            for item in menu:
+                tabel.add_row([item['id'], item['menu'], item['harga']])
+            print(tabel)
+        else:
+            print("menu tidak ada silahkan ditambah dulu.")
 
 Baris 69-76 merupakan fungsi role admin untuk mengubah menu, fungsi ini menggunakan loop jika memasukkan nomor atau id dari menu yang telah ada maka akan diminta untuk mengubah nama serta harga yang ada didalam menu tersebut.
-def ubah_menu(id_menu, nama, harga):
-    for item in menu:
-        if item['id'] == id_menu:
-            item['menu'] = nama
-            item['harga'] = harga
-            print(f"menu {id_menu} telah berhasil diubah.")
-            return
-    print(f"menu {id_menu} tidak ada.")
+
+    def ubah_menu(id_menu, nama, harga):
+        for item in menu:
+            if item['id'] == id_menu:
+                item['menu'] = nama
+                item['harga'] = harga
+                print(f"menu {id_menu} telah berhasil diubah.")
+                return
+        print(f"menu {id_menu} tidak ada.")
 
 Baris 79-84 merupakan fungsi role admin untuk menghapus menu, fungsi ini juga menggunakan loop jika kita memasukkan nomor atau id dari menu yang telah ada maka menu tersebut akan dihapus menggunakan "menu.remove(item)"
 def hapus_menu(id_menu):
