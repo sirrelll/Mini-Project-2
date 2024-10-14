@@ -2,7 +2,7 @@
 Nama : Darel Prasetya Fawwaz, NIM : 2409116064, Nama Tugas : Mini Project 2
 Tema : Sistem Reservasi Restoran
 
-========Flowchart(https://drive.google.com/file/d/1lmIHDax062-FHEZ0A83h4NE2MNKTE41Y/view?usp=sharing)=========
+Flowchart(https://drive.google.com/file/d/1lmIHDax062-FHEZ0A83h4NE2MNKTE41Y/view?usp=sharing)
 ![Mini Project 2 drawio (1)](https://github.com/user-attachments/assets/5f2d08d4-b153-4a05-a5b7-af87ee910095)
 Diawali dengan tombol start, kemudian muncul simbol decision yang memiliki 3 pilihan, jika memilih 1 maka akan masuk ke proses Admin ,jika memilih 2 maka akan masuk ke proses Pembeli, jika memilih 3 maka akan keluar atau end.
 
