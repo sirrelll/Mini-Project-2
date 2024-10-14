@@ -83,14 +83,14 @@ def hapus_menu(id_menu):
         break
     print(f"menu {id_menu} telah dihapus.")
 
-Baris 88-92 merupakan fungsi role pembeli untuk melihat meja yang tersedia, 
-# fungsi role pembeli
+Baris 88-92 merupakan fungsi role pembeli untuk melihat meja yang tersedia, pada fungsi ini terdapat dua kolom dan terdapat status dari nomor meja apakah tersedia atau telah dipesan.
 def lihat_meja():
     tabel = PrettyTable(['No Meja', 'Status Meja'])
     for m in meja:
         tabel.add_row([m['id'], m['status']])
     print(tabel)
 
+Baris 95-109 merupakan fungsi role pembeli untuk memesan meja, fungsi ini menggunakan loop dan pada tabel setiap nomor dan status meja misalnya jika nomor 1 dan status kosong baris berikut akan dimasukkan kedalam tabel.
 def pesan_meja(id_meja):
     status_meja = None
     for m in meja:
@@ -107,6 +107,9 @@ def pesan_meja(id_meja):
     print(f"===meja {id_meja} sudah dipesan===")
     return False
 
+Baris 112-128 merupakan fungsi role pembeli untuk membayar pesanan atau mereservasi suatu tempat, fungsi ini termasuk
+beberapa langkah seperti memesan meja, menghitung total harga pesanan, menyimpan informasi transaksi, dan menampilkan
+struk pembayaran dalam bentuk tabel.
 def bayar_pesanan(id_menu, jumlah, nama, id_meja):
     if pesan_meja(id_meja):
         for item in menu:
@@ -125,6 +128,7 @@ def bayar_pesanan(id_menu, jumlah, nama, id_meja):
     else:
         print("===meja tidak ada, transaksi dibatalkan===")
 
+Baris 132-139 merupakan fungsi role pembeli untuk melihat transaksi yang sudah dilakukan, fungsi ini akan menampilkan hasil transaksi yang sudah dilakukan menggunakan prettytable dan jika belum ada transaksi apapun maka akan menampilkan pesan bahwa belum ada transaksi
 def lihat_transaksi():
     if bayar:
         tabel = PrettyTable(['Nama', 'Meja', 'Menu', 'Jumlah','Tanggal', 'Total'])
@@ -134,7 +138,8 @@ def lihat_transaksi():
     else:
         print("===belum ada transaksi===")
 
-# Fungsi register dan login pembeli
+Baris 143-149 merupakan fungsi register untuk pembeli, fungsi ini berguna untuk mengatur akun jika melakukan register maka akun akan disimpan ke dalam username dan password. jika terdapat username yang sama maka akan menampilkan pesan "username sudah ada"
+#Fungsi register dan login pembeli
 def register(username, password):
     for akun in pembeli:
         if akun['username'] == username:
@@ -143,6 +148,7 @@ def register(username, password):
     pembeli.append({'username': username, 'password': password})
     print(f"===registrasi telah berhasil {username}===")
 
+Baris 152-158 merupakan fungsi login untuk pembeli, fungsi ini menggunakan loop dan mengecek akun yang disimpan jika terdapat kesamaan maka login akan berhasil, jika terdapat perbedaan maka login akan gagal.
 def login(username, password):
     for akun in pembeli:
         if akun['username'] == username and akun['password'] == password:
@@ -151,7 +157,8 @@ def login(username, password):
     print("===login gagal, silahkan coba lagi===")
     return False
 
-# Menu utama
+Baris 162-202 disini merupakan menu utamanya, pertama yaitu menampilkan Menu awal Reservasi Restoran dan terdapat 3 pilihan jika memilih 1 maka akan diminta untuk login ke akun admin dan jika berhasil login maka akan mengakses menu admin, yang didalamnya terdapat 5 pilihan yaitu tambah menu, lihat menu, ubah menu, hapus menu, dan kembali, dan di masing masingg pilihan terdapat fungsinya masing masing.
+#Menu utama
 def main():
     while True:
         print("\n===Reservasi Restoran====")
@@ -193,7 +200,8 @@ def main():
                         hapus_menu(id_menu)
                     elif pilihan_admin == '5':
                         break
-                    
+
+Baris 205-243 disini jika kita menjadi pembeli maka akan muncul opsi berikut, jika kita belum memiliki akun maka kita akan registrasi, setelah registrasi username dan password akan disimpan, kemudian kita login menggunakan username dan password yang telah dibuat, setelah login akan muncul Menu Pembeli yang dimana terdapat 5 pilihan yaitu Lihat Menu, Lihat Meja, Pesan Menu, Lihat Transaksi, Kembali yang dimana masing masing memiliki kegunaannya sesuai namanya.
         elif pilihan == '2':
             while True:
                 print("\n===Menu===")
@@ -233,7 +241,8 @@ def main():
                                 lihat_transaksi()
                             elif pilihan_transaksi == '5':
                                 break
-                            
+
+Baris 246-253 ini merupakan baris untuk registrasi jika belum memiliki akun setelah regist maka akan di kembalikan ke menu awal.
                 elif pilihan_pembeli == '2':
                     username = input("Username: ")
                     password = input("Password: ")
@@ -243,9 +252,11 @@ def main():
                 elif pilihan_pembeli == '3':
                     break
 
+Baris 256-258 merupakan baris untuk mengakhiri program atau end.
         elif pilihan == '3':
             print("terima kasih")
             break
 
+Baris 261-262 berfungsi untuk mengoperasikan jalannya program ini.
 if __name__ == '__main__':
     main()
