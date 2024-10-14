@@ -32,31 +32,31 @@ Jika sudah melakukan pemesanan maka jika ingin keluar atau end pembeli bisa memi
 ![Screenshot 2024-10-14 205250](https://github.com/user-attachments/assets/c4f7af23-69f7-48ef-a3fe-65fd2cfef1e5)
 
 ==========Baris Code===========
-Baris 36-37 berfungsi untuk memanggil prettytable serta membuat tabel yang mudah dibaca, kemudian untuk datetime berfungsi untuk memanggil tanggal dan waktu.
+Baris 35-38 berfungsi untuk memanggil prettytable serta membuat tabel yang mudah dibaca, kemudian untuk datetime berfungsi untuk memanggil tanggal dan waktu.
 
     from prettytable import PrettyTable
     from datetime import datetime
 
-Baris 40-44 yaitu berfungsi untuk menyimpan data data yang telah diinputkan contohnya menambahkan menu yang baru ditambah maka data itu ada tersimpan disini begitu juga dengan bayar seta pembeli, dan untuk meja disini terdapat 5 meja karena "in range(1,6) jadi untuk menyimpan status dari ke 5 meja tersebut apakah kosong atau sudah dipesan.
+Baris 40-45 yaitu berfungsi untuk menyimpan data data yang telah diinputkan contohnya menambahkan menu yang baru ditambah maka data itu ada tersimpan disini begitu juga dengan bayar seta pembeli, dan untuk meja disini terdapat 5 meja karena "in range(1,6) jadi untuk menyimpan status dari ke 5 meja tersebut apakah kosong atau sudah dipesan.
 
     menu = []
     bayar = []
     meja = [{'id': i, 'status': 'kosong'} for i in range(1, 6)]
     pembeli = []
 
-Baris 48-49 merupakan cara login admin untuk mengakses role admin dengan menggunakan id dan password yang telah disiapkan.
+Baris 47-50 merupakan cara login admin untuk mengakses role admin dengan menggunakan id dan password yang telah disiapkan.
 
     id_admin = "admin"
     pw_admin = "admin123"
 
-Baris 53-56 merupakan fungsi role admin untuk menambahkan menu, seperti "id_menu = len(menu) + 1" itu ibaratkan nomor contoh menambahkan menu ayam maka akan dianggap sebagai no 1 atau id 1 begitu juga seterusnya, untuk "menu.append" untuk menambahkan menu baru kedalam yang berisi id, menu, dan harga.
+Baris 54-57 merupakan fungsi role admin untuk menambahkan menu, seperti "id_menu = len(menu) + 1" itu ibaratkan nomor contoh menambahkan menu ayam maka akan dianggap sebagai no 1 atau id 1 begitu juga seterusnya, untuk "menu.append" untuk menambahkan menu baru kedalam yang berisi id, menu, dan harga.
 
     def tambah_menu(nama, harga):
         id_menu = len(menu) + 1
         menu.append({"id": id_menu, "menu": nama, "harga": harga})
         print(f"===menu '{nama}' telah ditambahkan.===")
 
-Baris 59-66 merupakan fungsi role admin untuk melihat menu, disini menampilkan menu menggunakan prettytable dan jika menu belum ada maka akan muncul "else"
+Baris 59-68 merupakan fungsi role admin untuk melihat menu, disini menampilkan menu menggunakan prettytable dan jika menu belum ada maka akan muncul "else"
 
     def lihat_menu():
         if menu:
@@ -67,7 +67,7 @@ Baris 59-66 merupakan fungsi role admin untuk melihat menu, disini menampilkan m
         else:
             print("menu tidak ada silahkan ditambah dulu.")
 
-Baris 69-76 merupakan fungsi role admin untuk mengubah menu, fungsi ini menggunakan loop jika memasukkan nomor atau id dari menu yang telah ada maka akan diminta untuk mengubah nama serta harga yang ada didalam menu tersebut.
+Baris 70-79 merupakan fungsi role admin untuk mengubah menu, fungsi ini menggunakan loop jika memasukkan nomor atau id dari menu yang telah ada maka akan diminta untuk mengubah nama serta harga yang ada didalam menu tersebut.
 
     def ubah_menu(id_menu, nama, harga):
         for item in menu:
@@ -78,7 +78,7 @@ Baris 69-76 merupakan fungsi role admin untuk mengubah menu, fungsi ini mengguna
                 return
         print(f"menu {id_menu} tidak ada.")
 
-Baris 79-84 merupakan fungsi role admin untuk menghapus menu, fungsi ini juga menggunakan loop jika kita memasukkan nomor atau id dari menu yang telah ada maka menu tersebut akan dihapus menggunakan "menu.remove(item)"
+Baris 81-88 merupakan fungsi role admin untuk menghapus menu, fungsi ini juga menggunakan loop jika kita memasukkan nomor atau id dari menu yang telah ada maka menu tersebut akan dihapus menggunakan "menu.remove(item)"
 def hapus_menu(id_menu):
 
         for item in menu:
@@ -87,7 +87,7 @@ def hapus_menu(id_menu):
             break
         print(f"menu {id_menu} telah dihapus.")
 
-Baris 88-92 merupakan fungsi role pembeli untuk melihat meja yang tersedia, pada fungsi ini terdapat dua kolom dan terdapat status dari nomor meja apakah tersedia atau telah dipesan.
+Baris 90-96 merupakan fungsi role pembeli untuk melihat meja yang tersedia, pada fungsi ini terdapat dua kolom dan terdapat status dari nomor meja apakah tersedia atau telah dipesan.
 
     def lihat_meja():
         tabel = PrettyTable(['No Meja', 'Status Meja'])
@@ -95,7 +95,7 @@ Baris 88-92 merupakan fungsi role pembeli untuk melihat meja yang tersedia, pada
             tabel.add_row([m['id'], m['status']])
         print(tabel)
 
-Baris 95-109 merupakan fungsi role pembeli untuk memesan meja, fungsi ini menggunakan loop dan pada tabel setiap nomor dan status meja misalnya jika nomor 1 dan status kosong baris berikut akan dimasukkan kedalam tabel.
+Baris 98-114 merupakan fungsi role pembeli untuk memesan meja, fungsi ini menggunakan loop dan pada tabel setiap nomor dan status meja misalnya jika nomor 1 dan status kosong baris berikut akan dimasukkan kedalam tabel.
 def pesan_meja(id_meja):
 
         status_meja = None
@@ -113,7 +113,7 @@ def pesan_meja(id_meja):
         print(f"===meja {id_meja} sudah dipesan===")
         return False
 
-Baris 112-128 merupakan fungsi role pembeli untuk membayar pesanan atau mereservasi suatu tempat, fungsi ini termasuk
+Baris 116-136 merupakan fungsi role pembeli untuk membayar pesanan atau mereservasi suatu tempat, fungsi ini termasuk
 beberapa langkah seperti memesan meja, menghitung total harga pesanan, menyimpan informasi transaksi, dan menampilkan
 struk pembayaran dalam bentuk tabel.
 
@@ -135,7 +135,7 @@ struk pembayaran dalam bentuk tabel.
         else:
             print("===meja tidak ada, transaksi dibatalkan===")
 
-Baris 132-139 merupakan fungsi role pembeli untuk melihat transaksi yang sudah dilakukan, fungsi ini akan menampilkan hasil transaksi yang sudah dilakukan menggunakan prettytable dan jika belum ada transaksi apapun maka akan menampilkan pesan bahwa belum ada transaksi.
+Baris 138-147 merupakan fungsi role pembeli untuk melihat transaksi yang sudah dilakukan, fungsi ini akan menampilkan hasil transaksi yang sudah dilakukan menggunakan prettytable dan jika belum ada transaksi apapun maka akan menampilkan pesan bahwa belum ada transaksi.
 
     def lihat_transaksi():
         if bayar:
@@ -146,7 +146,7 @@ Baris 132-139 merupakan fungsi role pembeli untuk melihat transaksi yang sudah d
         else:
             print("===belum ada transaksi===")
 
-Baris 143-149 merupakan fungsi register untuk pembeli, fungsi ini berguna untuk mengatur akun jika melakukan register maka akun akan disimpan ke dalam username dan password. jika terdapat username yang sama maka akan menampilkan pesan "username sudah ada".
+Baris 149-157 merupakan fungsi register untuk pembeli, fungsi ini berguna untuk mengatur akun jika melakukan register maka akun akan disimpan ke dalam username dan password. jika terdapat username yang sama maka akan menampilkan pesan "username sudah ada".
 
     def register(username, password):
         for akun in pembeli:
@@ -156,7 +156,7 @@ Baris 143-149 merupakan fungsi register untuk pembeli, fungsi ini berguna untuk 
         pembeli.append({'username': username, 'password': password})
         print(f"===registrasi telah berhasil {username}===")
 
-Baris 152-158 merupakan fungsi login untuk pembeli, fungsi ini menggunakan loop dan mengecek akun yang disimpan jika terdapat kesamaan maka login akan berhasil, jika terdapat perbedaan maka login akan gagal.
+Baris 159-167 merupakan fungsi login untuk pembeli, fungsi ini menggunakan loop dan mengecek akun yang disimpan jika terdapat kesamaan maka login akan berhasil, jika terdapat perbedaan maka login akan gagal.
 
     def login(username, password):
         for akun in pembeli:
@@ -166,7 +166,7 @@ Baris 152-158 merupakan fungsi login untuk pembeli, fungsi ini menggunakan loop 
         print("===login gagal, silahkan coba lagi===")
         return False
 
-Baris 162-202 disini merupakan menu utamanya, pertama yaitu menampilkan Menu awal Reservasi Restoran dan terdapat 3 pilihan jika memilih 1 maka akan diminta untuk login ke akun admin dan jika berhasil login maka akan mengakses menu admin, yang didalamnya terdapat 5 pilihan yaitu tambah menu, lihat menu, ubah menu, hapus menu, dan kembali, dan di masing masingg pilihan terdapat fungsinya masing masing.
+Baris 169-211 disini merupakan menu utamanya, pertama yaitu menampilkan Menu awal Reservasi Restoran dan terdapat 3 pilihan jika memilih 1 maka akan diminta untuk login ke akun admin dan jika berhasil login maka akan mengakses menu admin, yang didalamnya terdapat 5 pilihan yaitu tambah menu, lihat menu, ubah menu, hapus menu, dan kembali, dan di masing masingg pilihan terdapat fungsinya masing masing.
 
     def main():
         while True:
@@ -210,7 +210,7 @@ Baris 162-202 disini merupakan menu utamanya, pertama yaitu menampilkan Menu awa
                         elif pilihan_admin == '5':
                             break
 
-Baris 205-243 disini jika kita menjadi pembeli maka akan muncul opsi berikut, jika kita belum memiliki akun maka kita akan registrasi, setelah registrasi username dan password akan disimpan, kemudian kita login menggunakan username dan password yang telah dibuat, setelah login akan muncul Menu Pembeli yang dimana terdapat 5 pilihan yaitu Lihat Menu, Lihat Meja, Pesan Menu, Lihat Transaksi, Kembali yang dimana masing masing memiliki kegunaannya sesuai namanya.
+Baris 213-253 disini jika kita menjadi pembeli maka akan muncul opsi berikut, jika kita belum memiliki akun maka kita akan registrasi, setelah registrasi username dan password akan disimpan, kemudian kita login menggunakan username dan password yang telah dibuat, setelah login akan muncul Menu Pembeli yang dimana terdapat 5 pilihan yaitu Lihat Menu, Lihat Meja, Pesan Menu, Lihat Transaksi, Kembali yang dimana masing masing memiliki kegunaannya sesuai namanya.
 
             elif pilihan == '2':
                 while True:
@@ -252,7 +252,7 @@ Baris 205-243 disini jika kita menjadi pembeli maka akan muncul opsi berikut, ji
                                 elif pilihan_transaksi == '5':
                                     break
 
-Baris 246-253 ini merupakan baris untuk registrasi jika belum memiliki akun setelah regist maka akan di kembalikan ke menu awal.
+Baris 255-264 ini merupakan baris untuk registrasi jika belum memiliki akun setelah regist maka akan di kembalikan ke menu awal.
 
                 elif pilihan_pembeli == '2':
                     username = input("Username: ")
@@ -263,13 +263,13 @@ Baris 246-253 ini merupakan baris untuk registrasi jika belum memiliki akun sete
                 elif pilihan_pembeli == '3':
                     break
 
-Baris 256-258 merupakan baris untuk mengakhiri program atau end.
+Baris 266-270 merupakan baris untuk mengakhiri program atau end.
 
             elif pilihan == '3':
                 print("terima kasih")
                 break
 
-Baris 261-262 berfungsi untuk mengoperasikan jalannya program ini.
+Baris 272-275 berfungsi untuk mengoperasikan jalannya program ini.
 
     if __name__ == '__main__':
         main()
