@@ -20,3 +20,4 @@ Setelah registrasi dengan memasukkan nama serta sandi maka registarsi telah berh
 3. Pesan Menu -> Berfungsi untuk memesan menu yang tersedia dengan cara Memilih menu yang ada serta jumlah dan pilih nomor meja yang diinginkan untuk reservasi.
 4. Lihat Transaksi -> Berfungsi untuk Menampilkan transaksi yang sudah lakukan oleh pembeli.
 5. Kembali -> Mengembalikan ke Menu Awal
+Jika sudah melakukan pemesanan maka jika ingin keluar atau end pembeli bisa memilih opsi kembali yang akan menghubungkan ke end
