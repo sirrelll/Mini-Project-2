@@ -9,7 +9,7 @@ Diawali dengan tombol start, kemudian muncul simbol decision yang memiliki 3 pil
 Untuk pilihan 1 akan muncul login admin dan setelah kita masukkan user dan password admin maka akan dapat akses ke menu admin yang dimana menu admin terdapat beberapa pilihan yaitu:
 1. Tambah Menu -> Berfungsi untuk Menambahkan Menu serta Harga dengan cara Memasukkan Nama dan Harga menu setelah di input maka penambahan menu telah berhasil.
 2. Lihat Menu -> Berfungsi untuk Menampilkan Menu.
-3. Ubah Menu -> Berfungsi untuk mengubah menu yang telah ditambah dengan cara memasukkan nama dan harga menu yang baru setelah itu pengubahan menu telah berhasil.
+3. Ubah Menu -> Berfungsi untuk mengubah menu yang telah ditambah dengan cara memasukkan nama dan harga menu yang baru setelah itu pengubahan menu telah berhasil.
 4. Hapus Menu -> Berfungsi untuk menghapus menu yang sudah ada dengan cara menginput nama menu yang ingin dihapus.
 5. Kembali -> Mengembalikan ke simbol decision awal.
 
