@@ -26,3 +26,8 @@ Jika sudah melakukan pemesanan maka jika ingin keluar atau end pembeli bisa memi
 **Role Admin**
 ![Screenshot 2024-10-14 204554](https://github.com/user-attachments/assets/ee3ab7ff-8390-4315-b687-b7a69120bbfc)
 ![Screenshot 2024-10-14 204637](https://github.com/user-attachments/assets/cfe518a4-7344-4864-9dbe-a12511b539ee)
+**Role Pembeli**
+![Screenshot 2024-10-14 205226](https://github.com/user-attachments/assets/2fd529c0-5b76-403f-9874-6b4a8a20ad4d)
+![Screenshot 2024-10-14 205238](https://github.com/user-attachments/assets/63ccac5d-0d58-4635-bb48-32638b91eaf4)
+![Screenshot 2024-10-14 205250](https://github.com/user-attachments/assets/c4f7af23-69f7-48ef-a3fe-65fd2cfef1e5)
+
