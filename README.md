@@ -22,6 +22,5 @@ Setelah registrasi dengan memasukkan nama serta sandi maka registarsi telah berh
 5. Kembali -> Mengembalikan ke Menu Awal
 Jika sudah melakukan pemesanan maka jika ingin keluar atau end pembeli bisa memilih opsi kembali yang akan menghubungkan ke end
 
-=======================
-Output 
+============Output==============
 ![Screenshot 2024-10-14 204554](https://github.com/user-attachments/assets/ee3ab7ff-8390-4315-b687-b7a69120bbfc)
